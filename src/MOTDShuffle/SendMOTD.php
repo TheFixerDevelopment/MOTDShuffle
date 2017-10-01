@@ -11,7 +11,7 @@ class SendMOTD extends PluginTask{
         $this->plugin = $plugin;
     }
     
-    public function onRun($tick){
+    public function onRun(int $tick){
         $getMOTD = $this->getPlugin()->getMainConfig()->get("MOTD Message");
         $getMOTDArray = $getMOTD[mt_rand(0, count($getMOTD) - 1)];      
         $this->plugin->getServer()->getNetwork()->setName($getMOTDArray);            
